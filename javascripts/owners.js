@@ -9,5 +9,6 @@ var CatStore = ((oldCatStore) => {
 		owners = allMyOwners;
 	}
 
+	
 	return oldCatStore;
 })(CatStore || {});
