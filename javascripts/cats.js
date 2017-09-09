@@ -16,5 +16,19 @@ var CatStore = ((oldCatStore) => {
 		CatStore.combineArrays(myCats, MyOwners);
 	}
 
-	return oldCatStore;
+	oldCatStore.getCatsByOwner = (ownerId) => {
+		let callansCats = [];
+
+		cats.forEach((cat) => {
+			if(cat.ownerId === ownerId) {
+				callansCats.push(cat);
+			}
+		})
+		
+		let MyOwners = CatStore.getOwners();
+		CatStore.combineArrays(callansCats, MyOwners)
+
+ 	}	
+
+ return oldCatStore;
 })(CatStore || {});
