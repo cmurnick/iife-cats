@@ -9,5 +9,12 @@ var CatStore = ((oldCatStore) => {
 		cats = allMyCats;
 	}
 
+	oldCatStore.adoptCat = (catIndex) => {
+		cats[catIndex].ownerId = 1;
+		let myCats = CatStore.getCats();
+		let MyOwners = CatStore.getOwners();
+		CatStore.combineArrays(myCats, MyOwners);
+	}
+
 	return oldCatStore;
 })(CatStore || {});
